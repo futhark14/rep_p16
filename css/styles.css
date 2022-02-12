@@ -73,7 +73,7 @@ option{
   text-align: center;
   font-weight: bold;
 }
-input, textarea{
+input{
   width: 30%;
   padding: .8em;
   margin-bottom: 1em;
@@ -92,9 +92,9 @@ input, textarea{
 
 .interests_box{
   width: 30%;
-  padding: 10em;
+  height: 20em;
   margin-left: 35%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   border-radius:.5em;
   border: 1px solid rgb(202, 89, 89);
   background-color: white;
@@ -102,6 +102,48 @@ input, textarea{
   resize: none;
   text-align: center;
   overflow: auto;
+  position: relative;
+}
+
+.button-wrap {
+  position: relative;
+  text-align: center;
+}
+
+.button-label {
+  margin:0.5em;
+  padding: .5em;
+  cursor: pointer;
+  color: #292929;
+  background: #efefef;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button-label h1 {
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Jost', sans-serif;
+}
+
+.button-label:hover {
+  background: #d6d6d6;
+  color: #101010;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+}
+
+.button-label:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+}
+
+input[type="checkbox"]:checked + .button-label{
+  background: #2ECC71;
+  color: #efefef;
 }
 
 #genderSelect{
@@ -346,6 +388,20 @@ footer .glyphicon {
     padding: .2em 7em;
     font-size: 1.4em;
   }
+  input{
+    width: 80%;
+  }
+  #genderSelect{
+    width: 80%;
+  }
+  #interests_box{
+    width: 80%;
+    padding: 1em;
+    margin-left: 0 !important;
+  }
+  .send{
+    margin-left: 10%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -366,6 +422,10 @@ footer .glyphicon {
     margin-top: 5%;
     padding: .2em 5em;
   }
+  input{
+    width: 80%;
+  }
+
 }
 
 
