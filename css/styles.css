@@ -200,89 +200,22 @@ input{
 
 .interests_box{
   width: 30%;
-  height: 23.7em;
+  height: 20em;
   margin-bottom: 2em;
-  /* border: 1px solid rgb(202, 89, 89); */
+  border: 1px solid rgb(202, 89, 89);
   color: #000000;
-  background-color: rgb(113, 123, 168);
+  background-color: white;
   box-sizing: border-box;
   resize: none;
   text-align: center;
   overflow-y: scroll;
   position: relative;
 }
-
-
 @media screen and (min-width: 912px){
   .interests_box{
     margin-left: 35%;
   }
 }
-
-.container {
-
-  width:470px; 
-
-  position: relative;
-
-}
-
-.click{
-  background-color: #efefef;
-}
-
-.click:hover {
-  background-color: rgb(96, 153, 201);;
-}
-
-.click,.links {
-  /* padding: 12px; */
-  /* font-size: 1.2em;
-  font-family: futura Md BT;
-  border: none;
-  outline: none;
-  width:200px;
-  color:#fff;
-  transition: 0.3s; */
-
-
-  margin: 10px;
-  padding: .5em;
-  cursor: pointer;
-  /* width:400px; */
-  /* height: 80px; */
-  color: #292929;
-  background: #efefef;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  transition: 0.3s;
-  border: none;
-  outline: none;
-  /* -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; */
-}
-
-.list {
-  position: absolute;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: 0.3s;
-}
-
-.newlist {
-  transform: scaleY(1);
-}
-
-.links {
-  background-color: #efefef;
-}
-
-.links:hover {
-  background-color: rgb(96, 153, 201);
-  transform: scale(1.1);
-}
-
 .button-wrap {
   position: relative;
   text-align: center;
@@ -479,8 +412,6 @@ footer .glyphicon {
     font-size: 150px;
   }
 
-
-
   .jumbotron {
     padding-top:70%;
     padding-bottom: 500%;
@@ -527,9 +458,6 @@ footer .glyphicon {
     text-align: center;
     margin: 25px 0;
   }
-
-
-
   .btn-lg {
     width: 100%;
     margin-bottom: 35px;
@@ -570,16 +498,10 @@ footer .glyphicon {
 
 }
 
-.click,.links {
-  width: 95%;
-}
-
 @media screen and (max-width: 540px) {
   .logo {
     font-size: 150px;
   }
-
-
 
   .join{
     background-color: rgb(202, 89, 89);
