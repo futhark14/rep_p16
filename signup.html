@@ -33,7 +33,7 @@
             </div>
         </div>
     </nav>
-    
+
     <div id="contact" class="container-contact">
         <h1 class="text-center" id="contact">SIGN UP</h1>
         <div class="row">
@@ -56,143 +56,549 @@
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
-                </form>
 
                     <label for="interests_label">Select Interests</label>
-                    <!-- <div class="interest-wrapper"> -->
+                    <div class="interest-wrapper">
                         <div class="interests_box" id="interests">
 
+
+                            <!-- Animal -->
                             <div class="button-wrap">
-                                
-
-                                <!-- <div class="container">  button-wrap -->
-                            <div class="container">
-
-                                <button class="click"  value="Toggler" onClick='action("togglee")' >Click Me</button> 
-            
-
-                                    <div class="list" id="togglee" value="Togglee">                      
-                        
-                                        <button class="links" id="second-button">Link 1</button> 
-                                        <button class="links">animal</button>
-                                        <button class="links">Link 3</button>
-                                        <button class="links">Link 4</button>
-                                        <button class="links">Link 5</button>
-                        
-                                    </div>
-                            </div>
-
-                            <div class="container">
-
-                                <button class="click"  onClick='action("togglee2")' >Click Me</button> 
-            
-
-                                    <div class="list" id="togglee2">                      
-                        
-                                        <button class="links" id="second-button">Link 1</button> 
-                                        <button class="links">button</button>
-                                        <button class="links">Link 3</button>
-                                        <button class="links">Link 4</button>
-                                        <button class="links">Link 5</button>
-                        
-                                    </div>
-                            </div>
-
-                            <!-- <button class="click"  onClick='action("togglee2")'>Click Me</button> 
-                
-                            <div class="list" id="togglee2" >                      
-                
-                                <button class="links">button</button> 
-                                <button class="links">Link 2</button>
-                                <button class="links">Link 3</button>
-                                <button class="links">Link 4</button>
-                                <button class="links">Link 5</button>
-                
-                            </div> -->
-
-                                
-                                <!-- <input class="hidden checkbox-label" type="checkbox" name="select-btn"
-                                    id="animals-button" /> -->
-                                <!-- <label class="button-label" for="animals-button">
+                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="animals-button" />
+                                <label class="button-label" for="animals-button">
                                     <h1>Animals</h1>
                                 </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="dogs-button" />
+                                    <label class="button-sub-label" for="dogs-button">
+                                        <h1>Dogs</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="cats-button" />
+                                    <label class="button-sub-label" for="cats-button">
+                                        <h1>Cats</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="rabbits-button" />
+                                    <label class="button-sub-label" for="rabbits-button">
+                                        <h1>Rabbits</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="snakes-button" />
+                                    <label class="button-sub-label" for="snakes-button">
+                                        <h1>Snakes</h1>
+                                    </label>
+
+                                    <input class="hidden button-label" type="checkbox" name="select-btn"
+                                        id="spiders-button" />
+                                    <label class="button-sub-label" for="spiders-button">
+                                        <h1>Spiders</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="birds-button" />
+                                    <label class="button-sub-label" for="birds-button">
+                                        <h1>Birds</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="guineapigs-button" />
+                                    <label class="button-sub-label" for="guineapigs-button">
+                                        <h1>Guinea Pigs</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="fish-button" />
+                                    <label class="button-sub-label" for="fish-button">
+                                        <h1>Fish</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Music -->
+
                                 <input class="hidden checkbox-label" type="checkbox" name="select-btn"
                                     id="music-button" />
                                 <label class="button-label" for="music-button">
                                     <h1>Music</h1>
                                 </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="punk-button" />
+                                    <label class="button-sub-label" for="punk-button">
+                                        <h1>Punk</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="lofi-button" />
+                                    <label class="button-sub-label" for="lofi-button">
+                                        <h1>Lo-Fi</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="avantgarde-button" />
+                                    <label class="button-sub-label" for="avantgarde-button">
+                                        <h1>Avant Garde</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="rock-button" />
+                                    <label class="button-sub-label" for="rock-button">
+                                        <h1>Rock</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="orchestral-button" />
+                                    <label class="button-sub-label" for="orchestral-button">
+                                        <h1>Orchestral</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="pop-button" />
+                                    <label class="button-sub-label" for="pop-button">
+                                        <h1>Pop</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="hiphop-button" />
+                                    <label class="button-sub-label" for="hiphop-button">
+                                        <h1>Hip Hop</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="jazz-button" />
+                                    <label class="button-sub-label" for="jazz-button">
+                                        <h1>Jazz</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="blues-button" />
+                                    <label class="button-sub-label" for="blues-button">
+                                        <h1>Blues</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Sport -->
+
                                 <input class="hidden checkbox-label" type="checkbox" name="select-btn"
                                     id="sport-button" />
                                 <label class="button-label" for="sport-button">
                                     <h1>Sport</h1>
                                 </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="football-button" />
+                                    <label class="button-sub-label" for="football-button">
+                                        <h1>Football</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="handball-button" />
+                                    <label class="button-sub-label" for="handball-button">
+                                        <h1>Handball</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="hockey-button" />
+                                    <label class="button-sub-label" for="hockey-button">
+                                        <h1>Hockey</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="golf-button" />
+                                    <label class="button-sub-label" for="golf-button">
+                                        <h1>Golf</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="gymnastics-button" />
+                                    <label class="button-sub-label" for="gymnastics-button">
+                                        <h1>Gymnastics</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="tennis-button" />
+                                    <label class="button-sub-label" for="tennis-button">
+                                        <h1>Tennis</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="Badminton-button" />
+                                    <label class="button-sub-label" for="Badminton-button">
+                                        <h1>Badminton</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="sport-other-button" />
+                                    <label class="button-sub-label" for="sport-other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Intellectual -->
                                 <input class="hidden checkbox-label" type="checkbox" name="select-btn"
-                                    id="education-button" />
-                                <label class="button-label" for="education-button">
-                                    <h1>Education</h1>
+                                    id="intellectual-button" />
+                                <label class="button-label" for="intellectual-button">
+                                    <h1>Intellectual</h1>
                                 </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="it-button" />
+                                    <label class="button-sub-label" for="it-button">
+                                        <h1>IT</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="social-button" />
+                                    <label class="button-sub-label" for="social-button">
+                                        <h1>Social science</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="it-button" />
+                                    <label class="button-sub-label" for="it-button">
+                                        <h1>Natural science</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="theology-button" />
+                                    <label class="button-sub-label" for="theology-button">
+                                        <h1>Theology</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="psychology-button" />
+                                    <label class="button-sub-label" for="psychology-button">
+                                        <h1>Psychology</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="linguistics-button" />
+                                    <label class="button-sub-label" for="linguistics-button">
+                                        <h1>Linguistics</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="history-button" />
+                                    <label class="button-sub-label" for="history-button">
+                                        <h1>History</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="art-button" />
+                                    <label class="button-sub-label" for="art-button">
+                                        <h1>Art</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Literature games -->
                                 <input class="hidden checkbox-label" type="checkbox" name="select-btn"
-                                    id="work-button" />
-                                <label class="button-label" for="work-button">
-                                    <h1>Work</h1>
-                                </label> -->
+                                    id="literature-button" />
+                                <label class="button-label" for="literature-button">
+                                    <h1>Literature</h1>
+                                </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="fantasy-sci-fi-button" />
+                                    <label class="button-sub-label" for="fantasy-sci-fi-button">
+                                        <h1>Fantasy/Sci-Fi</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="romances-button" />
+                                    <label class="button-sub-label" for="romances-button">
+                                        <h1>Romances</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="thrillers-button" />
+                                    <label class="button-sub-label" for="thrillers-button">
+                                        <h1>Thrillers</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="historical-sociological-button" />
+                                    <label class="button-sub-label" for="historical-sociological-button">
+                                        <h1>Historical/Sociological</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="crime-button" />
+                                    <label class="button-sub-label" for="crime-button">
+                                        <h1>Crime/Mistery</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="adventure-button" />
+                                    <label class="button-sub-label" for="adventure-button">
+                                        <h1>Adventure</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="psycology-button" />
+                                    <label class="button-sub-label" for="psycology-button">
+                                        <h1>Psycology</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Physical activities -->
+                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="physical-activities-button" />
+                                <label class="button-label" for="physical-activities-button">
+                                    <h1>Physical Activities </h1>
+                                </label>
+
+                                <div id="list">
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="teamsport-button" />
+                                    <label class="button-sub-label" for="teamsport-button">
+                                        <h1>Team sports </h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="runningorientation-button" />
+                                    <label class="button-sub-label" for="runningorientation-button">
+                                        <h1>Running/Orientation</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="gyms-button" />
+                                    <label class="button-sub-label" for="gyms-button">
+                                        <h1>Gyms</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="martialArts-button" />
+                                    <label class="button-sub-label" for="martialArts-button">
+                                        <h1>Martial Arts</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+
+                                <!-- TV-shows -->
+                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="tvshow-button" />
+                                <label class="button-label" for="tvshow-button">
+                                    <h1>TV-show</h1>
+                                </label>
+
+                                <div id="list">
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="gilmoreGirls-button" />
+                                    <label class="button-sub-label" for="gilmoreGirls-button">
+                                        <h1>Gilmore Girls</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="breakingbad-button" />
+                                    <label class="button-sub-label" for="breakingbad-button">
+                                        <h1>Breaking bad</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="snabbacash-button" />
+                                    <label class="button-sub-label" for="snabbacash-button">
+                                        <h1>Snabba cash</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="theoffice-button" />
+                                    <label class="button-sub-label" for="theoffice-button">
+                                        <h1>The Office</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="thebigbangtheory-button" />
+                                    <label class="button-sub-label" for="thebigbangtheory-button">
+                                        <h1>The Big Bang Theory</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
+                                <!-- Video Games -->
+                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="video-games-button" />
+                                <label class="button-label" for="video-games-button">
+                                    <h1>Video Games</h1>
+                                </label>
+
+                                <div id="list">
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="roleplay-games-button" />
+                                    <label class="button-sub-label" for="roleplay-games-button">
+                                        <h1>Roleplaying Games</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="fps-games-button" />
+                                    <label class="button-sub-label" for="fps-button">
+                                        <h1>FPS</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="strategy-games-button" />
+                                    <label class="button-sub-label" for="strategy-button">
+                                        <h1>Strategy</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="mmos-games-button" />
+                                    <label class="button-sub-label" for="mmos-button">
+                                        <h1>MMOs</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="sandbox-games-button" />
+                                    <label class="button-sub-label" for="sandbox-button">
+                                        <h1>Sandbox</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="arcade-games-button" />
+                                    <label class="button-sub-label" for="arcade-button">
+                                        <h1>Arcade</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="action-adventure-button" />
+                                    <label class="button-sub-label" for="action-adventure-button">
+                                        <h1>Action/Adventure</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="simulation-button" />
+                                    <label class="button-sub-label" for="simulation-button">
+                                        <h1>Simulation</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="educational-button" />
+                                    <label class="button-sub-label" for="educational-button">
+                                        <h1>Educational</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="casino-button" />
+                                    <label class="button-sub-label" for="casino-button">
+                                        <h1>Casino</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="logic-button" />
+                                    <label class="button-sub-label" for="logic-button">
+                                        <h1>Logic</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-games-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+
+                                </div>
+
+                                <!-- Traditional games -->
+                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="traditional-games-button" />
+                                <label class="button-label" for="traditional-games-button">
+                                    <h1>Traditional Games</h1>
+                                </label>
+
+                                <div id="list">
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="chess-button" />
+                                    <label class="button-sub-label" for="chess-button">
+                                        <h1>Chess</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="LARP-button" />
+                                    <label class="button-sub-label" for="LARP-button">
+                                        <h1>LARP</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="TTRPG-button" />
+                                    <label class="button-sub-label" for="TTRPG-button">
+                                        <h1>TTRPG</h1>
+                                    </label>
+
+                                    <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                        id="other-button" />
+                                    <label class="button-sub-label" for="other-button">
+                                        <h1>Other</h1>
+                                    </label>
+                                </div>
+
 
                             </div>
                         </div>
-                    <!-- </div> -->
-                    <a class ="sign_up_btn" href="wait.html"><input type="button" class="send" value="Sign Up"></a>
-                    
+                    </div>
+                    <a class="sign_up_btn" href="wait.html"><input type="button" class="send" value="Sign Up"></a>
+
                     <label for="signed" id="signed">You can now join an event</label>
-                
+                </form>
             </div>
         </div>
     </div>
-
-    <script>
-        
-        // let click = document.querySelector('.click');
-
-        // let list = document.querySelector('.list');
-
-        // click.addEventListener("click",()=>{
-
-        //     list.classList.toggle('newlist');
-
-        // });
-
-        function toggleb(){
-            let list = document.querySelector('.list');
-            list.classList.toggle('newlist');
-        }
-
-    </script>
-
-    <script>
-    ("#first-button").click(function(){
-        ev.preventDefault();    
-        ('#second-button').removeClass('hide');
-        ('#first-button').addClass('hide');
-      });
-    </script>
-
-<script>
-    var hidden = false;
-    function action(id) {
-        let list = document.querySelector('.list');
-        // hidden = !hidden;
-        // if(hidden) {
-        //     document.getElementById(id).style.visibility = 'hidden';
-        // } else {
-        //     document.getElementById(id).style.visibility = 'visible';
-            
-        // }
-        list.classList.toggle('newlist');
-      
-    }
-</script>
-
-
-
 </body>
+<script>
+    var coll = document.getElementsByClassName("button-label");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+
+</script>
 
 </html>

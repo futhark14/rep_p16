@@ -183,8 +183,7 @@ input{
   width: 30%;
   padding: .8em;
   margin-bottom: 1em;
-  border-radius:.5em;
-  border: 1px solid rgb(202, 89, 89);
+  border: none;
   box-sizing: border-box;
   resize: none;
   text-align: center;
@@ -200,89 +199,21 @@ input{
 
 .interests_box{
   width: 30%;
-  height: 23.7em;
+  height: 20em;
   margin-bottom: 2em;
-  /* border: 1px solid rgb(202, 89, 89); */
   color: #000000;
-  background-color: rgb(113, 123, 168);
+  background-color: white;
   box-sizing: border-box;
   resize: none;
   text-align: center;
   overflow-y: scroll;
   position: relative;
 }
-
-
 @media screen and (min-width: 912px){
   .interests_box{
     margin-left: 35%;
   }
 }
-
-.container {
-
-  width:470px; 
-
-  position: relative;
-
-}
-
-.click{
-  background-color: #efefef;
-}
-
-.click:hover {
-  background-color: rgb(96, 153, 201);;
-}
-
-.click,.links {
-  /* padding: 12px; */
-  /* font-size: 1.2em;
-  font-family: futura Md BT;
-  border: none;
-  outline: none;
-  width:200px;
-  color:#fff;
-  transition: 0.3s; */
-
-
-  margin: 10px;
-  padding: .5em;
-  cursor: pointer;
-  /* width:400px; */
-  /* height: 80px; */
-  color: #292929;
-  background: #efefef;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  transition: 0.3s;
-  border: none;
-  outline: none;
-  /* -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; */
-}
-
-.list {
-  position: absolute;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: 0.3s;
-}
-
-.newlist {
-  transform: scaleY(1);
-}
-
-.links {
-  background-color: #efefef;
-}
-
-.links:hover {
-  background-color: rgb(96, 153, 201);
-  transform: scale(1.1);
-}
-
 .button-wrap {
   position: relative;
   text-align: center;
@@ -296,10 +227,47 @@ input{
   background: #efefef;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
   transition: 0.3s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+}
+
+#list{
+  display: none;
+}
+
+
+.button-sub-label{
+  padding: .5em;
+  width: 92%;
+  height: 2.5em;
+  margin:auto;
+  cursor: pointer;
+  color: #242424;
+  background: #dadada;
+  box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3), inset 0 -3px 0 rgba(96, 115, 201, 0.33);
+  transition: 0.3s;
+  margin-bottom: 0.5em;
+}
+
+.button-sub-label h1{
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Jost', sans-serif;
+  margin: auto;
+}
+
+.button-sub-label:hover{
+  background: rgb(96, 153, 201);
+  color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+}
+
+.button-sub-label:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+}
+
+input[type="checkbox"]:checked + .button-sub-label{
+  background: #2ECC71;
+  color: #efefef;
 }
 
 .button-label h1 {
@@ -323,6 +291,7 @@ input[type="checkbox"]:checked + .button-label{
   background: #2ECC71;
   color: #efefef;
 }
+
 #password{
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -331,15 +300,13 @@ input[type="checkbox"]:checked + .button-label{
   width: 30%;
   padding: .8em;
   margin-bottom: 1em;
-  border-radius:.5em;
-  border: 1px solid rgb(202, 89, 89);
+  border: none;
   box-sizing: border-box;
   resize: none;
   color: #000000;
 }
 .send, .login-btn{
-  border:1px solid rgb(202, 89, 89);
-  border-radius: .5em;
+  border: none;
   color: rgb(255, 255, 255);
   background-color: rgb(94, 206, 94);
   font-size: 1.3em;
@@ -479,8 +446,6 @@ footer .glyphicon {
     font-size: 150px;
   }
 
-
-
   .jumbotron {
     padding-top:70%;
     padding-bottom: 500%;
@@ -527,9 +492,6 @@ footer .glyphicon {
     text-align: center;
     margin: 25px 0;
   }
-
-
-
   .btn-lg {
     width: 100%;
     margin-bottom: 35px;
@@ -570,16 +532,10 @@ footer .glyphicon {
 
 }
 
-.click,.links {
-  width: 95%;
-}
-
 @media screen and (max-width: 540px) {
   .logo {
     font-size: 150px;
   }
-
-
 
   .join{
     background-color: rgb(202, 89, 89);
