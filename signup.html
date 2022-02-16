@@ -56,15 +56,64 @@
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
+                </form>
 
                     <label for="interests_label">Select Interests</label>
-                    <div class="interest-wrapper">
+                    <!-- <div class="interest-wrapper"> -->
                         <div class="interests_box" id="interests">
 
                             <div class="button-wrap">
-                                <input class="hidden checkbox-label" type="checkbox" name="select-btn"
-                                    id="animals-button" />
-                                <label class="button-label" for="animals-button">
+                                
+
+                                <!-- <div class="container">  button-wrap -->
+                            <div class="container">
+
+                                <button class="click"  value="Toggler" onClick='action("togglee")' >Click Me</button> 
+            
+
+                                    <div class="list" id="togglee" value="Togglee">                      
+                        
+                                        <button class="links" id="second-button">Link 1</button> 
+                                        <button class="links">animal</button>
+                                        <button class="links">Link 3</button>
+                                        <button class="links">Link 4</button>
+                                        <button class="links">Link 5</button>
+                        
+                                    </div>
+                            </div>
+
+                            <div class="container">
+
+                                <button class="click"  onClick='action("togglee2")' >Click Me</button> 
+            
+
+                                    <div class="list" id="togglee2">                      
+                        
+                                        <button class="links" id="second-button">Link 1</button> 
+                                        <button class="links">button</button>
+                                        <button class="links">Link 3</button>
+                                        <button class="links">Link 4</button>
+                                        <button class="links">Link 5</button>
+                        
+                                    </div>
+                            </div>
+
+                            <!-- <button class="click"  onClick='action("togglee2")'>Click Me</button> 
+                
+                            <div class="list" id="togglee2" >                      
+                
+                                <button class="links">button</button> 
+                                <button class="links">Link 2</button>
+                                <button class="links">Link 3</button>
+                                <button class="links">Link 4</button>
+                                <button class="links">Link 5</button>
+                
+                            </div> -->
+
+                                
+                                <!-- <input class="hidden checkbox-label" type="checkbox" name="select-btn"
+                                    id="animals-button" /> -->
+                                <!-- <label class="button-label" for="animals-button">
                                     <h1>Animals</h1>
                                 </label>
                                 <input class="hidden checkbox-label" type="checkbox" name="select-btn"
@@ -86,17 +135,64 @@
                                     id="work-button" />
                                 <label class="button-label" for="work-button">
                                     <h1>Work</h1>
-                                </label>
+                                </label> -->
+
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
                     <a class ="sign_up_btn" href="wait.html"><input type="button" class="send" value="Sign Up"></a>
                     
                     <label for="signed" id="signed">You can now join an event</label>
-                </form>
+                
             </div>
         </div>
     </div>
+
+    <script>
+        
+        // let click = document.querySelector('.click');
+
+        // let list = document.querySelector('.list');
+
+        // click.addEventListener("click",()=>{
+
+        //     list.classList.toggle('newlist');
+
+        // });
+
+        function toggleb(){
+            let list = document.querySelector('.list');
+            list.classList.toggle('newlist');
+        }
+
+    </script>
+
+    <script>
+    ("#first-button").click(function(){
+        ev.preventDefault();    
+        ('#second-button').removeClass('hide');
+        ('#first-button').addClass('hide');
+      });
+    </script>
+
+<script>
+    var hidden = false;
+    function action(id) {
+        let list = document.querySelector('.list');
+        // hidden = !hidden;
+        // if(hidden) {
+        //     document.getElementById(id).style.visibility = 'hidden';
+        // } else {
+        //     document.getElementById(id).style.visibility = 'visible';
+            
+        // }
+        list.classList.toggle('newlist');
+      
+    }
+</script>
+
+
+
 </body>
 
 </html>
