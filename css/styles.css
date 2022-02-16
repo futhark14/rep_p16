@@ -233,7 +233,6 @@ input{
   display: none;
 }
 
-
 .button-sub-label{
   padding: .5em;
   width: 92%;
@@ -241,7 +240,7 @@ input{
   margin:auto;
   cursor: pointer;
   color: #242424;
-  background: #dadada;
+  background-image: linear-gradient(to right, rgba(202, 89, 89, 0.288), rgba(187, 81, 81, 0.034));
   box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3), inset 0 -3px 0 rgba(96, 115, 201, 0.33);
   transition: 0.3s;
   margin-bottom: 0.5em;
@@ -255,7 +254,7 @@ input{
 }
 
 .button-sub-label:hover{
-  background: rgb(96, 153, 201);
+  background-image: linear-gradient(to right, rgb(99, 160, 209), rgb(96, 115, 201));
   color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
 }
@@ -266,7 +265,7 @@ input{
 }
 
 input[type="checkbox"]:checked + .button-sub-label{
-  background: #2ECC71;
+  background-image: linear-gradient(to right, #30d475, #2abb67);
   color: #efefef;
 }
 
@@ -277,7 +276,7 @@ input[type="checkbox"]:checked + .button-sub-label{
 }
 
 .button-label:hover {
-  background: rgb(96, 153, 201);
+  background-image: linear-gradient(to right, rgb(99, 160, 209), rgb(96, 115, 201));
   color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
 }
@@ -288,7 +287,7 @@ input[type="checkbox"]:checked + .button-sub-label{
 }
 
 input[type="checkbox"]:checked + .button-label{
-  background: #2ECC71;
+  background-image: linear-gradient(to right, #30d475, #2abb67);
   color: #efefef;
 }
 
@@ -314,6 +313,16 @@ input[type="checkbox"]:checked + .button-label{
   display: block;
   cursor: pointer;
   margin-left: 35%;
+} 
+
+.send:hover{
+  background-image: linear-gradient(to right, rgb(96, 214, 96), rgb(101, 224, 101));
+  font-size: 1.35em;
+}
+
+.login-btn:hover{
+  background-image: linear-gradient(to right, rgb(96, 214, 96), rgb(101, 224, 101));
+  font-size: 1.35em;
 }
 
 .login-btn{
