@@ -119,7 +119,7 @@ body{
   overflow-y: scroll;
 }
 
-#login, #todo2, #todo3, #waitBody{
+#login,#todo1, #admin-plan-match, #waitBody{
   font-family: 'Jost', sans-serif;
   font-size: 2em;
   line-height: 1.8;
@@ -197,6 +197,53 @@ input{
   visibility: hidden;
 }
 
+#gender-info-admin{
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.select-users{
+  font-family: 'Jost', sans-serif;
+  font-size: 1em;
+  color: white;
+  margin:auto;
+  width: 70%;
+  padding-top: 7%;
+  text-align: center;
+  resize: none;
+  position: relative;
+}
+
+.women-box{
+  display: inline-block;
+  width: 35%;
+  direction: rtl;
+  height: 25em;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background-color: rgb(96, 142, 201);
+  border: 2px solid rgba(255, 255, 255, 0.473);
+  box-shadow: 20px 25px 20px rgba(0, 0, 0, 0.432);
+  resize: none;
+}
+.men-box{
+  display: inline-block;
+  width: 35%;
+  height: 25em;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background-color: rgb(96, 142, 201);
+  border: 2px solid rgba(255, 255, 255, 0.473);
+  box-shadow: 20px 25px 20px rgba(0, 0, 0, 0.432);
+  resize: none;
+}
+
+.button-label:hover{
+  background-image: linear-gradient(to right, #30d474, #2abb66af);
+}
+
 .interests_box{
   width: 30%;
   height: 20em;
@@ -269,6 +316,11 @@ input[type="checkbox"]:checked + .button-sub-label{
   color: #efefef;
 }
 
+input[type="radio"]:checked + .button-label{
+  background-image: linear-gradient(to right, #30d475, #2abb67);
+  color: #efefef;
+}
+
 .button-label h1 {
   text-align: center;
   font-size: 1em;
@@ -315,12 +367,33 @@ input[type="checkbox"]:checked + .button-label{
   margin-left: 35%;
 } 
 
-.send:hover{
-  background-image: linear-gradient(to right, rgb(96, 214, 96), rgb(101, 224, 101));
-  font-size: 1.35em;
+.admin-btns{
+  margin:auto;
+  width: 70%;
+  padding-top: 1%;
+  height:15em;
+  text-align: center;
+  resize: none;
+  position: relative;
 }
 
-.login-btn:hover{
+.plan-next-match-btn, .auto-match-btn{
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(94, 206, 94);
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 40%;
+  cursor: pointer;
+  display: block;
+  margin:auto;
+}
+.div-next-match, .div-auto-match{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.send:hover, .login-btn:hover, .plan-next-match-btn:hover, .auto-match-btn:hover{
   background-image: linear-gradient(to right, rgb(96, 214, 96), rgb(101, 224, 101));
   font-size: 1.35em;
 }
@@ -425,7 +498,7 @@ footer .glyphicon {
   visibility: visible;
 }
 
-.sign_up_btn, .login_btn{
+.sign_up_btn, .login_btn, .next_match_btn{
   text-decoration: none !important;
 }
 
