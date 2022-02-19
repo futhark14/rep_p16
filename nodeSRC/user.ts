@@ -1,3 +1,4 @@
+import {Interests,Interest,SuperInterest} from "./interests";
 class User {
     private _userId: Number;
     private _firstName: String;
