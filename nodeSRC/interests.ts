@@ -77,6 +77,13 @@ export class Interests
         this.interests.delete(s);
     }
 
+    public setSubInterest(i:Interest,superName:string,){
+        let test:SuperInterest = this.interests.get(superName);
+        if(test == undefined){return false;}
+        test.addSubInterest(i);
+        return true;
+    }
+
     public getList() : Array<SuperInterest>
     {
         return Array.from(this.interests.values());
@@ -93,6 +100,9 @@ export class Interests
             }
         }
         return test;
+    }
+    public getInterest(name:string) : Interest{
+        return this.findInterest(name);
     }
 
     

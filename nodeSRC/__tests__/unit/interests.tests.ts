@@ -48,6 +48,37 @@ describe('SuperInterest tests', () => {
 )
 describe('Interests tests', () => {
 
+    let int:Interests = new Interests();
+    test('set, get & remove', ()=>{
+        expect(int.getInterest("Cooking")).toBeUndefined();
+        int.setInterest(new SuperInterest("Home",0));
+        expect(int.getInterest("Cooking")).toBeUndefined();
+        int.setSubInterest(new Interest("Cooking",0),"Home");
+        expect(int.getInterest("Cooking")).toStrictEqual(new Interest("Cooking",0));
+        int.removeInterest("Home");
+        expect(int.getInterest("Cooking")).toBeUndefined();
+        expect(int.getInterest("Home")).toBeUndefined();
+    });
+    test('interested functions', ()=>{
+        int.setInterest(new SuperInterest("Home",0));
+        int.setSubInterest(new Interest("Cooking",0),"Home");
+        
+        int.setInterested("Cooking");
+
+        expect(int.getInterest("Home").is_indifferent());
+        expect(int.getInterest("Cooking").is_interested());
+
+        int.setDisinterested("Cooking");
+
+        expect(int.getInterest("Home").is_indifferent());
+        expect(int.getInterest("Cooking").is_disinterested());
+
+        int.setIndifferent("Cooking");
+        int.setInterested("Home");
+
+        expect(int.getInterest("Home").is_interested());
+        expect(int.getInterest("Cooking").is_indifferent());
+    })
 }
 )
 
