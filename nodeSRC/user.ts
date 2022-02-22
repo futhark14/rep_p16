@@ -1,5 +1,5 @@
 import {Interests,Interest,SuperInterest} from "./interests";
-class User {
+export class User {
     private _userId: Number;
     private _firstName: String;
     private _lastName: String;
@@ -57,5 +57,16 @@ class User {
     public set password(value: String) {
         this._password = value;
     }
+    constructor(userId: Number, firstName: String, lastName: String, age: Number, gender: String, interests: Interests, phonenumber: String, password: String) {
+        this._userId = userId;
+        this._firstName = firstName;
+        this._lastName = lastName;
+        this._age = age;
+        this._gender = gender;
+        this._interests = interests;
+        this._phonenumber = phonenumber;
+        this._password = password;
+    }
 }
 
+ 
