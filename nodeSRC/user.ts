@@ -1,13 +1,13 @@
 import {Interests,Interest,SuperInterest} from "./interests";
 export class User {
     private _userId: Number;
-    private _firstName: String;
-    private _lastName: String;
+    private _firstName: string;
+    private _lastName: string;
     private _age: Number;
-    private _gender: String;
+    private _gender: string;
     private _interests: Interests;
-    private _phonenumber: String;
-    private _password: String;
+    private _phonenumber: string;
+    private _password: string;
 
     public get userId(): Number {
         return this._userId;
@@ -15,16 +15,16 @@ export class User {
     public set userId(value: Number) {
         this._userId = value;
     }
-    public get firstName(): String {
+    public get firstName(): string {
         return this._firstName;
     }
-    public set firstName(value: String) {
+    public set firstName(value: string) {
         this._firstName = value;
     }
-    public get lastName(): String {
+    public get lastName(): string {
         return this._lastName;
     }
-    public set lastName(value: String) {
+    public set lastName(value: string) {
         this._lastName = value;
     }
     public get age(): Number {
@@ -33,10 +33,10 @@ export class User {
     public set age(value: Number) {
         this._age = value;
     }
-    public get gender(): String {
+    public get gender(): string {
         return this._gender;
     }
-    public set gender(value: String) {
+    public set gender(value: string) {
         this._gender = value;
     }
     public get interests(): Interests {
@@ -45,19 +45,19 @@ export class User {
     public set interests(value: Interests) {
         this._interests = value;
     }
-    public get phonenumber(): String {
+    public get phonenumber(): string {
         return this._phonenumber;
     }
-    public set phonenumber(value: String) {
+    public set phonenumber(value: string) {
         this._phonenumber = value;
     }
-    public get password(): String {
+    public get password(): string {
         return this._password;
     }
-    public set password(value: String) {
+    public set password(value: string) {
         this._password = value;
     }
-    constructor(userId: Number, firstName: String, lastName: String, age: Number, gender: String, interests: Interests, phonenumber: String, password: String) {
+    constructor(userId: Number, firstName: string, lastName: string, age: Number, gender: string, interests: Interests, phonenumber: string, password: string) {
         this._userId = userId;
         this._firstName = firstName;
         this._lastName = lastName;

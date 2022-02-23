@@ -2,6 +2,7 @@
     "compilerOptions": {
       "types":["jest","node"],
       "noImplicitAny": false,
+      "esModuleInterop": true,
       "noEmitOnError": true,
       "removeComments": false,
       "sourceMap": true,
