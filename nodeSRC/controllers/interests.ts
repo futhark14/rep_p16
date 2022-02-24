@@ -3,6 +3,7 @@ import { Request, Response, NextFunction, json } from 'express';
 
 const getInterests = async (req: Request, res: Response, next: NextFunction) => {
     let i:Interests = generateInterests();
+    console.log(i);
     console.log(JSON.stringify(i));
     return res.status(200).json(JSON.stringify(i));
 }

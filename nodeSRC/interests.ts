@@ -1,8 +1,6 @@
-//names: are bound to a boolean indicating an attitude
-
+import { json } from 'express';
 import { StringMappingType } from "typescript";
-
-//attitudes: false indicates dislike while true indicates likes
+import interests from "./controllers/interests";
 export class Interest {
     private _name: string;
     //state  > 0 is interested
@@ -65,7 +63,7 @@ export class SuperInterest extends Interest {
 
 export class Interests 
 {
-    private interests: Map<string,SuperInterest>;
+    private interests: Map<string,SuperInterest> = new Map<string,SuperInterest>();
     
     public setInterest(i:SuperInterest)
     {
@@ -121,12 +119,19 @@ export class Interests
         if(int == undefined){return;}
         else {int.set_indifferent();}
     }
+    constructor(){
 
-
-    constructor()
-    {
-        this.interests = new Map<string,SuperInterest>();
     }
-
+    public toJSON(){
+        const retval = {
+            interests : Object.fromEntries(this.interests) 
+        }
+        return retval;
+    }
+    public static fromJSON(j) : Interests{
+        let i:Interests = new Interests();
+        i.interests = new Map(j["interests"]);
+        return i;
+    }
 }
 

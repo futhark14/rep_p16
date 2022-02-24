@@ -14,10 +14,11 @@ const signUp = async (req: Request, res: Response, next: NextFunction) => {
     let lastName: string = req.body.lastName;
     let age: Number = req.body.age;
     let gender: string = req.body.gender;
-    let interests: Interests = req.body.interests;
+    let interests: Interests = Interests.fromJSON(req.body.interests);
     let phonenumber: string = req.body.phonenumber;
     let password: string = req.body.password;
     let u:User = new User(userId, firstName, lastName, age, gender, interests, phonenumber, password);
+    console.log(u);
     if(maindb.add(u)){
         return res.status(200).json({
             message: "user created sucessfully"
