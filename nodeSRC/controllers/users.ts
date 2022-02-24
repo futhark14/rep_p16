@@ -34,7 +34,21 @@ const editUser = async (req: Request, res: Response, next: NextFunction) => {
 
 }
 const editUserInterests = async (req: Request, res: Response, next: NextFunction) => {
+    let firstName: string = req.body.firstName;
+    let lastName: string = req.body.lastName;
+    let interests: Interests = Interests.fromJSON(req.body.interests);
+    let user = maindb.get(firstName, lastName);
 
+    if(user != undefined && interests != undefined){
+        user.interests = interests;
+        return res.status(200).json({
+            message: "interests edited sucessfully"
+        })
+    }else {
+        return res.status(400).json({
+            message: "Error: user may not exist or invalid interests were given"
+        })
+    }
 }
 const login = async (req: Request, res: Response, next: NextFunction) => {
     console.log(req.body);

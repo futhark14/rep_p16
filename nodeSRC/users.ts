@@ -4,7 +4,7 @@ export class Users{
     private usermap : Map<string,User>;
     private maxid : number;
     public get(firstname:string, lastname:string) : User{
-        return this.usermap.get(firstname + lastname);
+        return this.usermap.get(firstname.concat(" ",lastname));
     }
     public add(u:User) :boolean {
         u.userId = this.maxid;
