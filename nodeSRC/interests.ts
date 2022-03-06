@@ -52,6 +52,9 @@ export class SuperInterest extends Interest {
     public getSubInterest(name:string) : Interest{
         return this.subInterests.find(x => x.name == name);
     }
+    public getSubInterests() : Array<Interest>{
+        return this.subInterests;
+    }
     constructor(name:string,state:number){
         super(name,state);
         this.subInterests = new Array<Interest>();
