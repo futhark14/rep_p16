@@ -67,6 +67,9 @@ export class User {
         this._phonenumber = phonenumber;
         this._password = password;
     }
+    getname() : string{
+        return this.firstName + " " + this.lastName;
+    }
 }
 
  

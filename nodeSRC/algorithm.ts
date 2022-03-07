@@ -2,25 +2,29 @@ import e from 'express';
 import { Interests, Interest, SuperInterest } from './interests';
 import { User } from './user';
 
-class Match{
-    private _user1 : User;
-    private _user2 : User;
-    private message : String;
+export class Match{
+    private _male : User;
+    private _female : User;
+    private message : string;
 
     private matchValue : number;
 
+    getmessage():string{
+        return this.message;
+    }
     getUser1():User{
-        return this._user1;
+        return this._male;
     }
     getUser2():User{
-        return this._user2;
+        return this._female;
     }
 
-    constructor(user1:User,user2:User, message:string){
-        this._user1 = user1;
-        this._user2 = user2;
+    constructor(_male:User,_female:User, message:string){
+        this._male = _male;
+        this._female = _female;
+        this.message = message;
 
-        this.matchValue = Match.rateMatch(this._user1.interests,this._user2.interests);
+        this.matchValue = Match.rateMatch(this._male.interests,this._female.interests);
     }
 
     static rateMatch(i1 : Interests,i2 : Interests) : number{

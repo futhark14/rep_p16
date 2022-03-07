@@ -3,12 +3,12 @@ import {User} from "./user";
 export class Users{
     private usermap : Map<string,User>;
     private maxid : number;
-    public get(firstname:string, lastname:string) : User{
-        return this.usermap.get(firstname.concat(" ",lastname));
+    public get(username : string) : User{
+        return this.usermap.get(username);
     }
     public add(u:User) :boolean {
         u.userId = this.maxid;
-        if(this.usermap.has(u.firstName.concat(" ",u.lastName))){
+        if(this.usermap.has(u.getname())){
             return false;
         }
         this.usermap.set(u.firstName.concat(" ",u.lastName),u);
