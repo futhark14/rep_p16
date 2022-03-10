@@ -12,7 +12,8 @@ export class Round{
     addFemale(user:User){
         this.unsortedFemales.push(user);
     }
-    automatch(){
+    //Round is an array of rounds that contains all PREVIOUS rounds
+    autoMatch(rounds:Array<Round>){
 
     }
     planmatch(malename:string,femalename:string){
@@ -28,11 +29,13 @@ export class Round{
         }
     }
     getTable(){
-        return "Table " + this.tablenumber;
+        this.tablenumber++;
+        return "Table " + this.tablenumber.toString();
     }
     constructor(unsortedMales : Array<User>,unsortedFemales : Array<User>) {
         this.unsortedMales = unsortedMales;
         this.unsortedFemales = unsortedFemales;
+        this.tablenumber = 0;
     }
     //returns the first name of the other person and the message, if there is no match return undefined
     getMatch(username : string) : [string,string]{

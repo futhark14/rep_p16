@@ -78,20 +78,26 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     
 }
 const isActive = async (req: Request, res: Response, next: NextFunction) => {
-    if(mainsession.isongoing()){
-        return res.status(200).json({
-            status: true
-        });
-    }
     return res.status(200).json({
-        status: false
+        roundActive: mainsession.isRoundOnGoing(),
+        hasEnded: mainsession.hasEnded()
     });
 }
 const startSession = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.startSession();
+    return res.status(200);
 }
 const stopSession = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.stopSession();
+    return res.status(200);
+}
+const endEvent = async (req: Request, res: Response, next: NextFunction) => {
+    mainsession.endEvent();
+    return res.status(200);
+}
+const autoMatch = async (req: Request, res: Response, next: NextFunction) => {
+    mainsession.autoMatch();
+    return res.status(200);
 }
 const getMatch = async (req: Request, res: Response, next: NextFunction) => {
     let username = req.body.username;

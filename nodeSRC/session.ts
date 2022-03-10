@@ -5,6 +5,7 @@ export class Session{
     males: Array<User>;
     females : Array<User>;
     roundongoing : boolean;
+    eventongoing : boolean;
     rounds : Array<Round>;
     current : number;
 
@@ -32,14 +33,25 @@ export class Session{
             this.roundongoing = false;
         }
     }
-    isongoing():boolean{
+    isRoundOnGoing():boolean{
         return this.roundongoing;
+    }
+    hasEnded():boolean{
+        return !this.eventongoing;
     }
     getCurrentMatch(username: string){
         return this.rounds[0].getMatch(username); 
     }
+    endEvent(){
+        this.eventongoing = false;
+    }
+    autoMatch(){
+        const [head, ...tail] = this.rounds;
+        head.autoMatch(tail);
+    }
     constructor(){
         this.roundongoing = false;
+        this.eventongoing = true;
         this.rounds = new Array<Round>();
         this.current = 0;
         this.males = new Array<User>;

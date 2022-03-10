@@ -2,8 +2,6 @@ import http from 'http';
 import express, { application, Express } from 'express';
 import morgan from 'morgan';
 import routes from './routes/users';
-import {Users} from './users';
-import { Session } from './session';
 
 const router: Express = express();
 
@@ -46,8 +44,3 @@ router.use((req, res, next) => {
 const httpServer = http.createServer(router);
 const PORT: any = process.env.PORT ?? 6060;
 httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
-
-declare global{
-    let maindb: Users = new Users();
-    let mainsession: Session = new Session();
-}
