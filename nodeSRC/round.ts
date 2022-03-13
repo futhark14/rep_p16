@@ -13,8 +13,33 @@ export class Round{
         this.unsortedFemales.push(user);
     }
     //Round is an array of rounds that contains all PREVIOUS rounds
-    autoMatch(rounds:Array<Round>){
+    autoMatch(rounds:Array<Round>) {
 
+        for (let i = 0; i < this.unsortedMales.length; i++) {
+            const male = this.unsortedMales[i];
+            let arr : Array<Match>;
+
+            for(let j = 0; j < this.unsortedFemales.length; j++){
+                const female = this.unsortedFemales[j];
+                let hasMatchedBefore : boolean = false;
+
+                for(let x = 0; x < rounds.length; x++){
+                    const round = rounds[x];
+                    const match = round.getMatch(female.getname());
+                    if(match !== undefined && match[0] === male.getname()){
+                        hasMatchedBefore = true;
+                        break;
+                    }
+                }
+                if(!hasMatchedBefore){
+                    arr.push(new Match(male,female,this.getTable(false)));
+                }
+            }
+            arr.sort((a,b) => {
+                return b.getValue() - a.getValue();
+            })
+            this.matches.push(arr[0]);
+        }
     }
     planmatch(malename:string,femalename:string){
         if(malename == undefined || femalename == undefined){
@@ -24,12 +49,14 @@ export class Round{
             let female = this.unsortedFemales.find(x => {x.getname() === femalename});
 
             if(male != undefined && female != undefined){
-                this.matches.push(new Match(male,female,this.getTable()));
+                this.matches.push(new Match(male,female,this.getTable(true)));
             }
         }
     }
-    getTable(){
-        this.tablenumber++;
+    private getTable(doIncrement : boolean){
+        if(doIncrement){
+            this.tablenumber++;
+        }
         return "Table " + this.tablenumber.toString();
     }
     constructor(unsortedMales : Array<User>,unsortedFemales : Array<User>) {
