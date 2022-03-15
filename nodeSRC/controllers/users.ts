@@ -106,14 +106,14 @@ const getMatch = async (req: Request, res: Response, next: NextFunction) => {
     if(user != undefined){
         if(user.password === password){
             let match: [string,string] = mainsession.getCurrentMatch(username);
-            if(match != undefined){
+            if(match !== undefined){
                 return res.status(200).json({
                     status: true,
                     name: match[0],
                     message: match[1]
                 })
             }
-            return res.status(401).json({
+            return res.status(200).json({
                 status: false,
                 message: "No match"
             })
@@ -125,6 +125,49 @@ const getMatch = async (req: Request, res: Response, next: NextFunction) => {
         message: "faulty login"
     })
     
+}
+const getShares =  async (req: Request, res: Response, next: NextFunction) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let user : User = maindb.get(username);
+    if(user != undefined){
+        if(user.password === password){
+            let users=mainsession.getMutualShares(username);
+            let phoneNumbers = new Array<string>();
+            for(let i = 0; i < users.length; i++){
+                phoneNumbers.push(maindb.get(users[i]).phonenumber);
+            }
+            return res.status(200).json({
+                status: true,
+                mutualShares: users,
+                phoneNumbers: phoneNumbers
+            });
+        }
+    }
+    return res.status(401).json({
+        status: false,
+        message: "invalid username or password"
+    });
+}
+const setShares =  async (req: Request, res: Response, next: NextFunction) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    let names : Array<string> = req.body.names;
+    let user : User = maindb.get(username);
+    if(user != undefined){
+        if(user.password === password){
+            for(let i = 0; i < names.length; i++){
+                mainsession.setshare(username,names[i]);
+            }
+            return res.status(200).json({
+                status: true
+            });
+        }
+    }
+    return res.status(401).json({
+        status: false,
+        message: "invalid username or password"
+    });
 }
 
 export default { signUp,editUser,editUserInterests,login };

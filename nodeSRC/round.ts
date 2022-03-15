@@ -60,8 +60,8 @@ export class Round{
         return "Table " + this.tablenumber.toString();
     }
     constructor(unsortedMales : Array<User>,unsortedFemales : Array<User>) {
-        this.unsortedMales = unsortedMales;
-        this.unsortedFemales = unsortedFemales;
+        this.unsortedMales = [...unsortedMales];
+        this.unsortedFemales = [...unsortedFemales];
         this.tablenumber = 0;
     }
     //returns the first name of the other person and the message, if there is no match return undefined

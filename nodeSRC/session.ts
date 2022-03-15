@@ -8,6 +8,7 @@ export class Session{
     eventongoing : boolean;
     rounds : Array<Round>;
     current : number;
+    sharesWith : Map<string,Array<string>>;
 
     addMale(male:User){
         this.males.push(male);
@@ -31,6 +32,7 @@ export class Session{
         
         if(this.roundongoing){
             this.roundongoing = false;
+            this.rounds.push(new Round(this.males,this.females));
         }
     }
     isRoundOnGoing():boolean{
@@ -49,6 +51,32 @@ export class Session{
         const [head, ...tail] = this.rounds;
         head.autoMatch(tail);
     }
+    setshare(username: string,usernameToShareWith : string){
+        if(!this.eventongoing){
+            let s = this.sharesWith.get(username);
+            if(s !== undefined){
+                s.push(usernameToShareWith);
+            }else{
+                s = new Array<string>(usernameToShareWith);
+            }
+            this.sharesWith.set(username,s);
+        }
+    }
+    getMutualShares(username : string) : Array<string>{
+        let s = this.sharesWith.get(username);
+        if(s !== undefined){
+            let arr = new Array<string>();
+            for(let i = 0; i <s.length; i++){
+                let other = this.sharesWith.get(s[i]);
+                if(other != undefined && other.includes(username)){
+                    arr.push(s[i]);
+                }
+            }
+            return arr;
+        }else{
+            return [];
+        }
+    }
     constructor(){
         this.roundongoing = false;
         this.eventongoing = true;
@@ -56,5 +84,6 @@ export class Session{
         this.current = 0;
         this.males = new Array<User>;
         this.females = new Array<User>;
+        this.rounds.push(new Round(this.males,this.females));
     }
 }
