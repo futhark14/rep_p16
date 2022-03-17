@@ -64,6 +64,11 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     let user : User = maindb.get(username);
     if(user != undefined){
         if(user.password === password){
+            if(user.gender.toLowerCase() === "male"){
+                mainsession.addMale(user);
+            }else{
+                mainsession.addFemale(user);
+            }
             return res.status(200).json({
                 status: true,
                 message: "logged in sucessfully as " + username,
@@ -84,11 +89,11 @@ const isActive = async (req: Request, res: Response, next: NextFunction) => {
     });
 }
 const startSession = async (req: Request, res: Response, next: NextFunction) => {
-    mainsession.startSession();
+    mainsession.startRound();
     return res.status(200);
 }
 const stopSession = async (req: Request, res: Response, next: NextFunction) => {
-    mainsession.stopSession();
+    mainsession.stopRound();
     return res.status(200);
 }
 const endEvent = async (req: Request, res: Response, next: NextFunction) => {

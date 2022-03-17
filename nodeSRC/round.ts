@@ -14,10 +14,10 @@ export class Round{
     }
     //Round is an array of rounds that contains all PREVIOUS rounds
     autoMatch(rounds:Array<Round>) {
-
-        for (let i = 0; i < this.unsortedMales.length; i++) {
-            const male = this.unsortedMales[i];
-            let arr : Array<Match>;
+        const unsortedmalescopy: Array<User> = this.unsortedMales.slice();
+        for (let i = 0; i < unsortedmalescopy.length;i++) {
+            const male = unsortedmalescopy[i];
+            let arr : Array<Match> = new Array<Match>();
 
             for(let j = 0; j < this.unsortedFemales.length; j++){
                 const female = this.unsortedFemales[j];
@@ -37,19 +37,27 @@ export class Round{
             }
             arr.sort((a,b) => {
                 return b.getValue() - a.getValue();
-            })
-            this.matches.push(arr[0]);
+            });
+            if(arr.length > 0 ){
+                this.planmatch(arr[0].getUser1().getname(),arr[0].getUser2().getname());
+            }
         }
     }
     planmatch(malename:string,femalename:string){
         if(malename == undefined || femalename == undefined){
-
+            return;
         }else{
-            let male = this.unsortedMales.find(x => {x.getname() === malename});
-            let female = this.unsortedFemales.find(x => {x.getname() === femalename});
+            let male = this.unsortedMales.find(x => {return x.getname() === malename});
+            let female = this.unsortedFemales.find(x => {return x.getname() === femalename});
 
             if(male != undefined && female != undefined){
                 this.matches.push(new Match(male,female,this.getTable(true)));
+
+                let i = this.unsortedFemales.findIndex(x => {return x.getname() === female.getname()});
+                let j = this.unsortedMales.findIndex(x => {return x.getname() === male.getname()});
+
+                this.unsortedFemales.splice(i,1);
+                this.unsortedMales.splice(j,1);
             }
         }
     }
@@ -60,18 +68,21 @@ export class Round{
         return "Table " + this.tablenumber.toString();
     }
     constructor(unsortedMales : Array<User>,unsortedFemales : Array<User>) {
-        this.unsortedMales = [...unsortedMales];
-        this.unsortedFemales = [...unsortedFemales];
+        this.unsortedMales = unsortedMales.slice();
+        this.unsortedFemales = unsortedFemales.slice();
         this.tablenumber = 0;
+        this.matches = new Array<Match>();
     }
     //returns the first name of the other person and the message, if there is no match return undefined
     getMatch(username : string) : [string,string]{
-        let match = this.matches.find(x =>{x.getUser1().getname() === username || x.getUser2().getname() === username});
+        let match = this.matches.find(x =>{return (x.getUser1().getname() === username || x.getUser2().getname() === username)});
         if(match === undefined){
             return undefined;
         }else{
             if(match.getUser1().getname() === username){
-                return [match.getUser2().firstName,match.getmessage()]
+                return [match.getUser2().getname(),match.getmessage()]
+            }else{
+                return [match.getUser1().getname(),match.getmessage()]
             }
         }
     }

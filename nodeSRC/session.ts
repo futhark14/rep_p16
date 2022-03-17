@@ -6,8 +6,7 @@ export class Session{
     females : Array<User>;
     roundongoing : boolean;
     eventongoing : boolean;
-    rounds : Array<Round>;
-    current : number;
+    rounds : Array<Round>;//0 is always the ongoing round
     sharesWith : Map<string,Array<string>>;
 
     addMale(male:User){
@@ -16,23 +15,21 @@ export class Session{
     }
     
     addFemale(female:User){
-        this.males.push(female);
+        this.females.push(female);
         this.rounds[0].addFemale(female);
     }
 
-    startSession(){
-        if(this.current == 0){return;}
+    startRound(){
 
         if(!this.roundongoing){
             this.roundongoing = true;
         }
     }
-    stopSession(){
-        if(this.current == 0){return;}
+    stopRound(){
         
         if(this.roundongoing){
             this.roundongoing = false;
-            this.rounds.push(new Round(this.males,this.females));
+            this.rounds.unshift(new Round(this.males,this.females));
         }
     }
     isRoundOnGoing():boolean{
@@ -77,13 +74,16 @@ export class Session{
             return [];
         }
     }
+    planMatch(maleUsername: string, femaleUsername: string) {
+        this.rounds[0].planmatch(maleUsername,femaleUsername);
+    }
     constructor(){
         this.roundongoing = false;
         this.eventongoing = true;
         this.rounds = new Array<Round>();
-        this.current = 0;
-        this.males = new Array<User>;
-        this.females = new Array<User>;
-        this.rounds.push(new Round(this.males,this.females));
+        this.males = new Array<User>();
+        this.females = new Array<User>();
+        this.rounds.unshift(new Round(this.males,this.females));
+        this.sharesWith = new Map<string,Array<string>>();
     }
 }
