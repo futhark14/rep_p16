@@ -18,6 +18,9 @@ export class Match{
     getUser2():User{
         return this._female;
     }
+    getValue():number{
+        return this.matchValue;
+    }
 
     constructor(_male:User,_female:User, message:string){
         this._male = _male;
