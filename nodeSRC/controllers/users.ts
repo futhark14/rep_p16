@@ -10,7 +10,6 @@ let maindb: Users = new Users();
 let mainsession: Session = new Session();
 
 const signUp = async (req: Request, res: Response, next: NextFunction) => {
-    console.log(maindb);
     let userId: Number = req.body.userId;
     let firstName: string = req.body.firstName;
     let lastName: string = req.body.lastName;
@@ -57,7 +56,6 @@ const editUserInterests = async (req: Request, res: Response, next: NextFunction
 const login = async (req: Request, res: Response, next: NextFunction) => {
     let username = req.body.username;
     let password = req.body.password;
-
     let user : User = maindb.get(username);
     if(user != undefined){
         if(user.password === password){
@@ -87,25 +85,35 @@ const isActive = async (req: Request, res: Response, next: NextFunction) => {
 }
 const startSession = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.startRound();
-    return res.status(200);
+    return res.status(200).json({
+        status: true
+    });
 }
 const stopSession = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.stopRound();
-    return res.status(200);
+    return res.status(200).json({
+        status: true
+    });
 }
 const endEvent = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.endEvent();
-    return res.status(200);
+    return res.status(200).json({
+        status: true
+    });
 }
 const autoMatch = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.autoMatch();
-    return res.status(200);
+    return res.status(200).json({
+        status: true
+    });
 }
 const manualMatch = async (req: Request, res: Response, next: NextFunction) => {
     let user1 = req.body.malename;
     let user2 = req.body.malename;
     mainsession.planMatch(user1,user2);
-    return res.status(200);
+    return res.status(200).json({
+        status: true
+    });
 }
 const getMatch = async (req: Request, res: Response, next: NextFunction) => {
     let username = req.body.username;
@@ -144,8 +152,18 @@ const getMatches = async (req: Request, res: Response, next: NextFunction) => {
             matches: returnmatches
         });
     }else{
-        return res.status(400);
+        return res.status(400).json({
+            status: false
+        });
     }
+}
+const getUnmatched = async (req: Request, res: Response, next: NextFunction) => {
+    let unsortedMales = mainsession.rounds[0].unsortedMales.map(x => {return x.getname()});
+    let unsortedFemales = mainsession.rounds[0].unsortedFemales.map(x => {return x.getname()});
+    return res.status(200).json({
+        males: unsortedMales,
+        females: unsortedFemales
+    });
 }
 const getShares =  async (req: Request, res: Response, next: NextFunction) => {
     let username = req.body.username;
@@ -191,5 +209,5 @@ const setShares =  async (req: Request, res: Response, next: NextFunction) => {
     });
 }
 
-export default { signUp,editUserInterests,login,isActive,startSession,stopSession,endEvent,autoMatch,getMatch,getShares,setShares,manualMatch,getMatches};
+export default { signUp,editUserInterests,login,isActive,startSession,stopSession,endEvent,autoMatch,getMatch,getShares,setShares,manualMatch,getMatches,getUnmatched};
 
