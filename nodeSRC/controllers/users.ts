@@ -36,10 +36,6 @@ const signUp = async (req: Request, res: Response, next: NextFunction) => {
         })
     }
 }
-
-const editUser = async (req: Request, res: Response, next: NextFunction) => {
-
-}
 const editUserInterests = async (req: Request, res: Response, next: NextFunction) => {
     let firstName: string = req.body.firstName;
     let lastName: string = req.body.lastName;
@@ -102,6 +98,12 @@ const endEvent = async (req: Request, res: Response, next: NextFunction) => {
 }
 const autoMatch = async (req: Request, res: Response, next: NextFunction) => {
     mainsession.autoMatch();
+    return res.status(200);
+}
+const manualMatch = async (req: Request, res: Response, next: NextFunction) => {
+    let user1 = req.body.malename;
+    let user2 = req.body.malename;
+    mainsession.planMatch(user1,user2);
     return res.status(200);
 }
 const getMatch = async (req: Request, res: Response, next: NextFunction) => {
@@ -175,5 +177,5 @@ const setShares =  async (req: Request, res: Response, next: NextFunction) => {
     });
 }
 
-export default { signUp,editUser,editUserInterests,login };
+export default { signUp,editUserInterests,login,isActive,startSession,stopSession,endEvent,autoMatch,getMatch,getShares,setShares,manualMatch};
 
