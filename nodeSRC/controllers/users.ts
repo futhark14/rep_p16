@@ -1,3 +1,4 @@
+import { Round } from './../round';
 import { Interest,Interests,SuperInterest } from "../interests";
 import {User} from "../user";
 import {Users} from "../users";
@@ -133,6 +134,19 @@ const getMatch = async (req: Request, res: Response, next: NextFunction) => {
     })
     
 }
+
+const getMatches = async (req: Request, res: Response, next: NextFunction) => {
+    let round = req.body.round;
+    if(round <= mainsession.rounds.length){
+        let matches = mainsession.rounds[mainsession.rounds.length-round].matches;
+        let returnmatches = matches.map(x => [x.getUser1().getname(),x.getUser2().getname(),x.getmessage(),x.getValue()]);
+        return res.status(200).json({
+            matches: returnmatches
+        });
+    }else{
+        return res.status(400);
+    }
+}
 const getShares =  async (req: Request, res: Response, next: NextFunction) => {
     let username = req.body.username;
     let password = req.body.password;
@@ -177,5 +191,5 @@ const setShares =  async (req: Request, res: Response, next: NextFunction) => {
     });
 }
 
-export default { signUp,editUserInterests,login,isActive,startSession,stopSession,endEvent,autoMatch,getMatch,getShares,setShares,manualMatch};
+export default { signUp,editUserInterests,login,isActive,startSession,stopSession,endEvent,autoMatch,getMatch,getShares,setShares,manualMatch,getMatches};
 

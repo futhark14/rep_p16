@@ -18,6 +18,7 @@ router.post('/session/getMatch',userController.getMatch);
 router.post('/session/manualMatch',userController.manualMatch);
 router.get('/session/getShares',userController.getShares);
 router.post('/session/setShares',userController.setShares);
+router.post('/session/getMatches',userController.getMatches);
 
 router.get('/interests/',intrestController.getInterests);
 export = router;
